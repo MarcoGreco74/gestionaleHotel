@@ -1,0 +1,526 @@
+<!doctype html>
+<html>
+<head>
+<title>Gestionale walk-in</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial scale=1.0">
+<link href="../bootstrap/bootstrap.css" rel="stylesheet"></link>
+<script src="../bootstrap/bootstrap.js"></script>
+<style>
+  body {
+	margin: 0; 	
+}
+audio {
+	display:none;
+	}
+	.HClogo {
+	height:100px;
+	width:150px;
+	}
+#calendar_container {
+	width:250px;
+	border:1px solid black;
+	margin-top:80px;
+}
+.month {
+background-color:brown;
+font:bold 12px verdana;
+color:white;
+}
+.daysofweek {
+background-color:gray;
+font:bold 12px verdana;
+color:white;
+}
+.days {
+font-size: 12px;
+font-family:verdana;
+color:black;
+background-color: red;
+padding: 2px;
+}
+.days #today{
+font-weight: bold;
+color: red;
+}
+ul {list-style-type: none;}
+body {font-family: Verdana, sans-serif;
+}
+.month {
+  padding: 70px 25px;
+  width: 100%;
+  background: #1abc9c;
+  text-align: center;
+}
+.month ul {
+  margin: 0;
+  padding: 0;
+}
+.month ul li {
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+.month .prev {
+  float: left;
+  padding-top: 10px;
+}
+.month .next {
+  float: right;
+  padding-top: 10px;
+}
+.weekdays {
+  margin: 0;
+  padding: 10px 0;
+  background-color: #ddd;
+}
+.weekdays li {
+  display: inline-block;
+  width: 13.6%;
+  color: #666;
+  text-align: center;
+}
+.days {
+  padding: 10px 0;
+  background: #eee;
+  margin: 0;
+}
+.days li {
+  list-style-type: none;
+  display: inline-block;
+  width: 13.6%;
+  text-align: center;
+  margin-bottom: 5px;
+  font-size:12px;
+  color: #777;
+}
+.days li .active {
+  padding: 5px;
+  background: #1abc9c;
+  color: white !important
+}
+/* Add media queries for smaller screens */
+@media screen and (max-width:720px) {
+  .weekdays li, .days li {width: 13.1%;}
+}
+@media screen and (max-width: 420px) {
+  .weekdays li, .days li {width: 12.5%;}
+  .days li .active {padding: 2px;}
+}
+@media screen and (max-width: 290px) {
+  .weekdays li, .days li {width: 12.2%;}
+}
+img {
+width:600px;
+height:600px;
+}
+#totale {
+	width:70px;
+	height:25px;
+	border: 2px solid grey;
+	//float:right;
+	background-color:white;
+	}
+.camere {
+	background: -moz-linear-gradient(top,  rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); 
+	background: -webkit-linear-gradient(top,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); 
+	background: linear-gradient(to bottom,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); 
+	}
+#documentoIdentita {
+	border:2px solid blue;
+	width:600px;
+	
+	}
+</style>
+</head>
+
+<body onmouseover='playAudio()'>
+<audio controls id="myAudio">
+<source src="../audio-video/01 Lazy River.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container-fluid" >
+<!-- TOP BAR -->
+<div class="row" style='background-color:#212529;'><!--se fixed-top il corpo sale e scompare del campo-->
+
+    <div class="col-9">
+<!-- NAV TABS -->
+      <ul class="nav nav-tabs">
+		<li class="nav-item">
+		<a class="nav-link active" aria-current="page" href="#"><img src='../immagini/cannocchiale3.png' class="img-thumbnail" style='width:20px; height:20px;' alt='Ricerca'></a>
+		</li>
+		<li class="nav-item">
+		<a class="nav-link" href="#"><img src='../immagini/fleg.png' class="img-thumbnail" style='width:30px; height:30px;' alt='Salva'></a>
+		</li>
+		<li class="nav-item">
+		<a class="nav-link" href="#"><img src='../immagini/stampa.jpg' class="img-thumbnail" style='width:30px; height:30px;' alt='Stampa'></a>
+		</li>
+		<li class="nav-item">
+		<a class="nav-link disabled">Gestione tariffe</a>
+		</li>
+	</ul>
+<!-- FINE NAV TABS-->
+    </div>
+	
+    <div class="col-3">
+<!-- COLLAPSE--> 
+	  <p><span style='color:white;'>Leggenda colori camere</span>
+  <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
+  </button>
+  <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">  
+  </button>
+  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">  
+  </button>
+</p>
+<div class="collapse" id="collapseExample1">
+  <div class="card card-body">
+    Camere con vista giardino.
+  </div>
+</div>
+<div class="collapse" id="collapseExample2">
+  <div class="card card-body">
+    Camere con vista piscina
+  </div>
+</div>
+<div class="collapse" id="collapseExample3">
+  <div class="card card-body">
+    Camere con vista mare
+  </div>
+</div>
+<!-- FINE COLLAPSE --> 
+    </div>
+  </div>
+  </div>
+ <!-- FINE TOP BAR -->
+ 
+<!-- CORPO -->
+<div class='container-fluid'>
+<div class="row ">
+
+<!--<div class="col-2 bg-dark">-->
+<div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark col" style='height:800px;'>
+    <!--<a href="" class="d-flex align-items-start mb-3 mb-md-0 me-md-auto text-white text-decoration-none">-->
+      <svg class="bi me-2" ><use xlink:href="#bootstrap"/></svg>
+      <span class="fs-4"><img src='../img/HotelCube.png' class='HClogo'></span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a href="gestionaleAlbergo.php" class="nav-link active" aria-current="page">
+          <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"/></svg>
+          Home
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link text-white">
+          <svg class="bi me-2" width="10" height="10"><use xlink:href="#speedometer2"/></svg>
+          Booking
+        </a>
+      </li>
+      <li>
+        <a href="areaCkin.php" class="nav-link text-white">
+          <svg class="bi me-2" width="10" height="10"><use xlink:href="#table"/></svg>
+          Check-in
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link text-white">
+          <svg class="bi me-2" width="10" height="10"><use xlink:href="#grid"/></svg>
+          Check-out
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link text-white">
+          <svg class="bi me-2" width="10" height="10"><use xlink:href="#people-circle"/></svg>
+          Gestione tariffe
+        </a>
+      </li>
+	  <li>
+        <a href="#" class="nav-link text-white">
+          <svg class="bi me-2" width="10" height="10"><use xlink:href="#people-circle"/></svg>
+          Tableau
+        </a>
+      </li>
+	  <li>
+        <a href="#" class="nav-link text-white">
+          <svg class="bi me-2" width="10" height="10"><use xlink:href="#people-circle"/></svg>
+          Prenotazioni 
+        </a>
+      </li>
+	  <li>
+        <a href="#" class="nav-link text-white">
+          <svg class="bi me-2" width="10" height="10"><use xlink:href="#people-circle"/></svg>
+          Arrivi
+        </a>
+      </li>
+	  <li>
+        <a href="sezioneAccess.php" class="nav-link text-white">
+          <svg class="bi me-2" width="10" height="10"><use xlink:href="#people-circle"/></svg>
+          Logout
+        </a>
+      </li>
+    </ul>
+<input type="date" name="begin" style='height:80px;' placeholder="dd-mm-yyyy" value="2022-09-02"    min="2022-09-01" max="2022-09-20">
+<ul class="weekdays">
+  <li>Mo</li>
+  <li>Tu</li>
+  <li>We</li>
+  <li>Th</li>
+  <li>Fr</li>
+  <li>Sa</li>
+  <li>Su</li>
+</ul>
+<ul class="days">  
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+  <li>5</li>
+  <li>6</li>
+  <li>7</li>
+  <li>8</li>
+  <li>9</li>
+  <li><span class="active">10</span></li>
+  <li>11</li>
+  <li>12</li>
+  <li>13</li>
+  <li>14</li>
+  <li>15</li>
+  <li>16</li>
+  <li>17</li>
+  <li>18</li>
+  <li>19</li>
+  <li>20</li>
+  <li>21</li>
+  <li>22</li>
+  <li>23</li>
+  <li>24</li>
+  <li>25</li>
+  <li>26</li>
+  <li>27</li>
+  <li>28</li>
+  <li>29</li>
+  <li>30</li>
+  <li>31</li>
+</ul>
+</div>
+
+<div class="camere col d-flex align-items-end flex-column bd-highlight mb-3 " >
+<nav class="nav flex-column text-center">
+  <div class="p-2"><a class="nav-pills active" aria-current="page" href="#">Camere<br>Singole X</a></div>
+  <div class="p-2"><button type="button" onclick='apri();' class ='btn btn-success'>1</button></div>
+  <div class="p-2"><button type="button" class="btn btn-info">2</button></div>
+  <div class="p-2"><button type="button" class="btn btn-primary">3</button></div>
+  <div class="p-2"><button type="button" class="btn btn-success">16</button></div>
+  <div class="p-2"><button type="button" class="btn btn-info">17</button></div>
+  <div class="p-2"><button type="button" class="btn btn-primary">18</button></div>
+  <div class="p-2"><button type="button" class="btn btn-success">31</button></div>
+  <div class="p-2"><button type="button" class="btn btn-info">32</button></div>
+  <div class="p-2"><button type="button" class="btn btn-primary">33</button></div>
+  <div class="p-2"><button type="button" class="btn btn-success">46</button></div>
+  <div class="p-2"><button type="button" class="btn btn-info">47</button></div>
+  <div class="p-2"><button type="button" class="btn btn-primary">48</button></div>
+  </nav>
+  </div>
+  <!--</div>-->
+  <!--<div class="col-1 ">-->
+  <div class="camere col d-flex align-items-end flex-column bd-highlight mb-3 " >
+  <nav class="nav flex-column text-center">
+  <div class="p-2"><a class="nav-pills active" aria-current="page" href="#">Camere<br>Doppie XX</a></div>
+  <div class="p-2"><button type="button" class="btn btn-success">4</button></div>
+  <div class="p-2"><button type="button" class="btn btn-info">5</button></div>
+  <div class="p-2"><button type="button" class="btn btn-primary">6</button></div>
+  <div class="p-2"><button type="button" class="btn btn-success">19</button></div>
+  <div class="p-2"><button type="button" class="btn btn-info">20</button></div>
+  <div class="p-2"><button type="button" class="btn btn-primary">21</button></div>
+  <div class="p-2"><button type="button" class="btn btn-success">34</button></div>
+  <div class="p-2"><button type="button" class="btn btn-info">35</button></div>
+  <div class="p-2"><button type="button" class="btn btn-primary">36</button></div>
+  <div class="p-2"><button type="button" class="btn btn-success">49</button></div>
+  <div class="p-2"><button type="button" class="btn btn-info">50</button></div>
+  <div class="p-2"><button type="button" class="btn btn-primary">51</button></div>
+  </nav>
+  </div>
+ <!--</div>-->
+  <!--<div class="col-1 ">-->
+  <div class="camere col d-flex align-items-end flex-column bd-highlight mb-3 " >
+  <nav class="nav flex-column text-center ">
+  <div class="p-2"><a class="nav-pills active" aria-current="page" href="#">Camere<br>Doppie M</a></div>
+  <div class="p-2"><button type="button" class="btn btn-success">7</button></div>
+  <div class="p-2"><button type="button" class="btn btn-info">8</button></div>
+  <div class="p-2"><button type="button" class="btn btn-primary">9</button></div>
+  <div class="p-2"><button type="button" class="btn btn-success">22</button></div>
+  <div class="p-2"><button type="button" class="btn btn-info">23</button></div>
+  <div class="p-2"><button type="button" class="btn btn-primary">24</button></div>
+  <div class="p-2"><button type="button" class="btn btn-success">37</button></div>
+  <div class="p-2"><button type="button" class="btn btn-info">38</button></div>
+  <div class="p-2"><button type="button" class="btn btn-primary">39</button></div>
+  <div class="p-2"><button type="button" class="btn btn-success">52</button></div>
+  <div class="p-2"><button type="button" class="btn btn-info">53</button></div>
+  <div class="p-2"><button type="button" class="btn btn-primary">54</button></div>
+  </nav>
+  </div>
+ <!--</div>-->
+  <!--<div class="col-1 ">-->
+  <div class="camere col d-flex align-items-end flex-column bd-highlight mb-3 " >
+  <nav class="nav flex-column text-center">
+  <div class="p-2"><a class="nav-pills active" aria-current="page" href="#">Camere<br>Triple XXX</a></div>
+  <div class="p-2"><button type="button" class="btn btn-success">10</button></div>
+  <div class="p-2"><button type="button" class="btn btn-info">11</button></div>
+  <div class="p-2"><button type="button" class="btn btn-primary">12</button></div>
+  <div class="p-2"><button type="button" class="btn btn-success">25</button></div>
+  <div class="p-2"><button type="button" class="btn btn-info">26</button></div>
+  <div class="p-2"><button type="button" class="btn btn-primary">27</button></div>
+  <div class="p-2"><button type="button" class="btn btn-success">40</button></div>
+  <div class="p-2"><button type="button" class="btn btn-info">41</button></div>
+  <div class="p-2"><button type="button" class="btn btn-primary">42</button></div>
+  <div class="p-2"><button type="button" class="btn btn-success">55</button></div>
+  <div class="p-2"><button type="button" class="btn btn-info">56</button></div>
+  <div class="p-2"><button type="button" class="btn btn-primary">57</button></div>
+  </nav>
+  </div>
+  <!--</div>-->
+  <!--<div class="col-1 ">-->
+  <div class="camere col d-flex align-items-end flex-column bd-highlight mb-3 " >
+  <nav class="nav flex-column text-center">
+  <div class="p-2"><a class="nav-pills active" aria-current="page" href="#">Camere<br>Triple MX</a></div>
+  <div class="p-2"><button type="button" class="btn btn-success">13</button></div>
+  <div class="p-2"><button type="button" class="btn btn-info">14</button></div>
+  <div class="p-2"><button type="button" class="btn btn-primary">15</button></div>
+  <div class="p-2"><button type="button" class="btn btn-success">28</button></div>
+  <div class="p-2"><button type="button" class="btn btn-info">29</button></div>
+  <div class="p-2"><button type="button" class="btn btn-primary">30</button></div>
+  <div class="p-2"><button type="button" class="btn btn-success">43</button></div>
+  <div class="p-2"><button type="button" class="btn btn-info">44</button></div>
+  <div class="p-2"><button type="button" class="btn btn-primary">45</button></div>
+  <div class="p-2"><button type="button" class="btn btn-success">58</button></div>
+  <div class="p-2"><button type="button" class="btn btn-info">59</button></div>
+  <div class="p-2"><button type="button" class="btn btn-primary">60</button></div>
+</nav>
+</div>
+
+<!--</div>-->
+</div>
+</div>
+
+
+
+
+<!-- FINE CORPO-->
+
+<!--MODAL BOX-->
+<div class="modal fade" id="mb" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl" >
+    <div class="modal-content" style='border:5px solid green; height:550px;'>
+      <div class="modal-header" style='background-color:#d5e2ef;'>
+	  
+	  <form>
+		<!--</div><div class="row">
+		<div class="col">
+		<input type="text" class="form-control" placeholder="First name" aria-label="First name">
+		</div>
+		<div class="col">
+		<input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+		</div>
+		<div class="col">
+		<input type="text" class="form-control" placeholder="Camera" aria-label="Camera">
+		</div>
+		<label>Da<input type='date'></label><label>A<input type='date'></label>
+		<div class="col">
+		<div id='documentoIdentita'>
+		<label>Tipo documento</label><select>
+		<option>-Seleziona un tipo di documento di identità</option>
+		<option>Carta identità</option>
+		<option>Passaporto</option>
+		<option>Patente di guida</option>
+		<option>Tessera di riconoscimento AT e BT</option>
+		<option>Patente nautica</option>
+		</select>
+		<label>Numero documento</label><input type='text' placeholder='numero documento'>
+		<label>Data emissione documento</label><input type='date'>
+		<label>Comune rilascio documento</label><input type='text' placeholder='luogo di rilascio'>
+		</div>	
+		</div>
+		</div>-->
+		<div class="container text-center">
+  <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+		<div class="row">
+		<div class="col-md-4"><input type="text" class="form-control" placeholder="First name" aria-label="First name"></div>
+		<div class="col-md-4"><input type="text" class="form-control" placeholder="Last name" aria-label="Last name"></div>
+		<div class="col-1 col-md-4"><input type="text" class="form-control" placeholder="Camera" aria-label="Camera"></div>
+		</div>
+		<!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+		<div class="row">
+		<div class="col-6 col-md-4">Dal <input type='date'></div>
+		<div class="col-2 col-md-4">Al <input type='date'></div>
+		<div class="col-2 col-md-4"><input type="text" class="form-control" placeholder="id-prenotazione" aria-label="id-prenotazione"></div>
+		</div>
+		<!-- Columns are always 50% wide, on mobile and desktop -->
+		<div class="row">
+		Tariffa  <div id='totale' class='col-6'></div>
+		<div class="col-6"></div>
+		</div>
+		</div>
+		
+        <!--<h5 class="modal-title" id="exampleModalLabel">Camera </h5>-->
+        
+		</div>
+		<div class="modal-body">
+			<!--<h5 id="messaggioErrore">ciao</h5>-->	
+			<div class="col">
+		<div id='documentoIdentita'>
+		<label><h3>Documento di identità</h3></label>
+		<div class="input-group mb-3">
+		<label class="input-group-text" for="inputGroupSelect01">Seleziona documento</label>
+		<select class="form-select" id="inputGroupSelect01">
+		<option selected>Tipo documento</option>
+		<option value="1">Carta di identità</option>
+		<option value="2">Patente di guida</option>
+		<option value="3">Passaporto</option>
+		<option value="4">Tessera di riconoscimento AT e BT</option>
+		<option value="5">Patente nautica</option>
+		</select>
+		</div>
+		<div class="input-group input-group-sm mb-3">
+		<span class="input-group-text" id="inputGroup-sizing-sm">Numero documento</span>
+		<input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+		</div>
+		<div class="input-group mb-3">
+		<input type='text' class="form-select" id="inputGroupSelect02">
+		<label class="input-group-text" for="inputGroupSelect02">Comune di rilascio</label>
+		</div>
+		Data di rilascio <input type='date' class='form-select'>
+		</div>	
+		</div>	
+      </div>
+      <div class="modal-footer" style='background-color:#d5e2ef;'>
+		<a class="btn btn-secondary" href="#" role="button">Addebita</a>
+		<input class="btn btn-secondary" type="reset" value="Storna addebito">
+		<input class="btn btn-secondary" type="button" value="Effettua check-in">
+		<input class="btn btn-primary" type="submit" value="Salva">
+		</form>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- FINE MODAL BOX -->
+
+<script>
+function playAudio(){
+let x=document.getElementById('myAudi');
+x.load();
+x.autoplay=true;
+}
+body.addEventListener('click', playAudio);
+function apri(){
+		const finestraErrore = new bootstrap.Modal('#mb');
+		finestraErrore.show();
+		}
+//const dropdownElementList = document.querySelectorAll('.dropdown-toggle')
+//onst dropdownList = [...dropdownElementList].map(dropdownToggleEl => new bootstrap.Dropdown(dropdownToggleEl))	
+</script>
+</body>
+</html>

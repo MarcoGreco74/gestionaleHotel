@@ -1,0 +1,22 @@
+@font-face {
+	font-family:'Patrick Hand';
+	src: url('FONT_f/PatrickHand-Regular.ttf') format('truetype');
+}
+body {
+	background: #abd8f4 url('../immagini/costa tiziana3.jpg') no-repeat center center fixed;
+	background-size: cover;
+}
+header {
+	text-align:center;
+	color:red;
+	
+}
+audio {
+	display:none;
+}
+select {
+	cursor:s-resize;
+}
+textarea {
+	cursor:text;
+}

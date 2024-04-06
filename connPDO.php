@@ -1,0 +1,21 @@
+<?php
+$type="mysql";
+$server="localhost";
+$port="3306";
+$db="albergo";
+$charset="utf8mb4";
+$username="root";
+$password="vanigliaecacao";
+$dsn="$type:server=$server;dbname=$db;port=$port;charset=$charset;";
+$options = [
+	PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION,
+	PDO::ATTR_DEFAULT_FETCH_MODE=>PDO::FETCH_ASSOC,
+	PDO::ATTR_EMULATE_PREPARES=>false,
+];
+try{
+	$pdo=new PDO($dsn, $username, $password, $options);
+}catch(PDOException $e){
+	throw new PDOException($e->getCode(), $e->getMessage());
+}
+
+?>

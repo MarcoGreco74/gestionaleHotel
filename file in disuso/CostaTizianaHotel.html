@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial scale=1.0">
+<meta http-equiv="refresh" content="70">
+<link href="nuovo6.css" rel="stylesheet">
+</head>
+<body onclick="playAudio()">
+<audio controls id="myAudio">
+<source src="../audio-video/01 Lazy River.mp3" type="audio/mpeg">
+</audio>
+<header>
+<div id="headDiv1">
+<h1>Costa Tiziana Hotel resort</h1>
+</div>
+<div id="headDiv2">
+<h2>_____Crotone Italia_______</h2>
+</div>
+</header>
+<main>
+<nav>
+<h3>Link utili</h3>
+<ul>
+<li><a href="">Home</a></li>
+<li><a target="_blank" href="https://www.tripadvisor.it/Hotel_Review-g194748-d232505-Reviews-Costa_Tiziana_Hotel_Resort-Crotone_Province_of_Crotone_Calabria.html">Tripadvisor</a></li>
+<li><a target="_blank" href="https://www.booking.com/hotel/it/tiziana-giardini-naxos.it.html?label=gen173nr-1DCAEoggI46AdIM1gEaHGIAQGYARS4ARfIAQzYAQPoAQGIAgGoAgO4AvXMnYoGwAIB0gIkZjQ1ZjFmZWEtOTA5Zi00ZjA5LWI1OTItZTY1OWQ2N2JiZTNl2AIE4AIB;sid=373e21fd653dd4b133d1a9dc4a26a527;dest_id=-118503;dest_type=city;dist=0;from_beach_key_ufi_sr=1;group_adults=1;group_children=0;hapos=1;hpos=1;no_rooms=1;req_adults=1;req_children=0;room1=A;sb_price_type=total;sr_order=popularity;srepoch=1632069245;srpvid=c2c6747e432d0056;type=total;ucfs=1&">Booking.com</a></li>
+<li><a target="_blank" href="https://it.hotels.com/search.do?destination-id=12503734&q-check-in=2021-09-21&q-check-out=2021-09-22&q-rooms=1&q-room-0-adults=2&q-room-0-children=0&sort-order=BEST_SELLER">Hotels.com</a></li>
+<li><a href="#archivio foto">Archivio foto</a></a></li>
+<li><a href="#prenotazioni">Prenotazioni</a></li>
+<li><a href="#contatti">Contatti</a></li>
+</ul>
+</nav>
+<article>
+<h3>Dicono di noi</h3>
+<a href="">Corriere Della Sera</a>
+<a href="">Gazzetta Del Sud</a>
+<a href="">Il Crotonese</a>
+<a href="">alcune recensioni</a>
+</article>
+<section>
+<figure>
+<img src="immagini/calabria.jpg" title="Calabria" usemap="#mappa">
+<map name="mappa">
+<area target="_blank" title="Calabria" href="https://portale.regione.calabria.it/website/" coords="135,136,124,143,117,147,112,158,114,170,116,177,115,188,109,194,99,202,90,212,90,223,87,235,80,240,57,244,52,231,53,219,56,207,64,200,70,188,64,177,64,167,76,164,87,155,88,144,81,135,76,125,73,111,69,98,62,90,52,77,46,63,44,48,47,41,56,41,65,44,73,49,79,45,88,43,91,31,96,23,106,25,108,35,111,42,104,47,100,52,100,58,102,67,110,71,119,71,129,76,140,80,136,87,128,95,124,101,124,108,123,116,128,120,132,125" shape="poly">
+<area target="_blank" title="Crotone" href="http://www.comune.crotone.it/home" coords="145,90,132,91,130,99,128,104,123,114,126,120,132,128,142,136,155,140,157,129,158,122,156,110,152,100" shape="poly">
+</map>
+<img src="immagini/Costa Tiziana.jpg" title="Costa Tiziana">
+<figcaption>Immagine della struttura vista dal mare</figcaption>
+</figure>
+</section>
+<section id="prenotazioni">
+<form name="hotelForm" method="POST" action="/">
+<a name="prenotazioni"><h3>Prenotazioni</h3></a>
+<label>Stay logged in <input type="checkbox"></label>
+<p>Username <input type="text" placeholder="your username" required minlength="3" maxlength="30" title="minimo 3 caratteri, massimo 10"></p>
+<p>Password <input type="password" placeholder="your password" required title="devi inserire una password"></p>
+<p>Under 18 <input type="radio" name="age" value="Under 18"></p>
+<p>Over 18 <input type="radio" name="age" value="Over 18"></p>
+<details><summary>Note riguardo i bambini</summary>Cari mamma e papà, non dimenticate di portare <mark>i documenti di identità dei vostri bambini</mark><p>  Ho letto <input type="checkbox"></p></details>
+<table>
+<thead>
+<tr>
+<th colspan="3">Planning prenotazioni</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>Tipo</th>
+<th>Periodo</th>
+<th>Disponibilità</th>
+</tr>
+<tr>
+<td><select>
+<option value="singola">Singola</option>
+<option value="doppia xx">Doppia XX</option>
+<option value="doppia M">Doppia M</option>
+<option value="tripla mx">Tripla MX</option>
+<option value="tripla xxx">Tripla XXX</option>
+</select></td>
+<td>
+<select>
+<option value="bassa stagione">Bassa stagione</option>
+<option value="media stagione">Media stagione</option>
+<option value="alta stagione">Alta stagione</option>
+<option value="agosto">Agosto</option>
+</select>
+</td>
+<td>
+<select>
+<option value="1 notte">1 notte</option>
+<option value="3 notti">3 notti</option>
+<option value="1 settimana">1 settimana</option>
+</select>
+</td>
+</tr>
+<tr>
+<th>Posizione</th>
+<th>Arrangiamento</th>
+<th>Bagno</th>
+</tr>
+<tr>
+<td>
+<select>
+<option value="vista mare">Vista mare</option>
+<option value="vista giardino">Vista giardino</option>
+<option value="vista piscina">Vista piscina</option>
+</select>
+</td>
+<td>
+<select>
+<option value="pernottamento e colazione">Pernottamento e colazione</option>
+<option value="mezza pensione">Mezza pensione</option>
+<option value="pensione completa">Pensione completa</option>
+</select>
+</td>
+<td>
+<select>
+<option value="con vasca">Con vasca</option>
+<option value="con doccia">Con doccia</option>
+<option value="con Jacuzzi">Con Jacuzzi</option>
+</select>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Seleziona una data <input type="date"></p>
+<p>Inserisci i documenti di identità <input type="file" multiple></p>
+<textarea name="msg" placeholder="inserisci un  commento" maxlength="100" rows="5" cols="40" required></textarea>
+<p>Invia richiesta <input type="submit" value="invia"></p>
+<p>Reimposta <input type="reset" value="reset"></p>
+</form>
+</section>
+<a name="#" href="">Torna su</a>
+<aside>
+<iframe width = "300" height = "150" src="https://www.youtube.com/embed/s3eXfIdNczk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</aside>
+</main>
+<figure>
+<a name="archivio foto"><h3>Archivio foto</h3></a>
+<img src ="immagini/costa tiziana1.jpg">
+<img src ="immagini/costa tiziana2.jpg">
+<img src ="immagini/costa tiziana3.jpg">
+<img src ="immagini/costa tiziana4.jpg">
+<img src ="immagini/costa tiziana5.jpg">
+<img src ="immagini/costa tiziana6.jpg">
+<img src ="immagini/costa tiziana7.jpg">
+<img src ="immagini/costa tiziana8.jpg">
+<a href="#">Torna su</a>
+</figure>
+<p draggable="true" >Il Costa Tiziana Resort <br> è un villaggio in <ins> Calabria </ins> nei pressi di <b>Crotone</b>, composto da un corpo centrale di fronte al mare, dove si trovano i servizi principali – <i>Ristorante, Reception, Biberoneria, Sale congressi, Sala TV </i> - con <sup>112</sup> confortevoli camere, dotate di servizi con doccia o vasca, asciugacapelli, aria condizionata, TV color, frigobar, telefono, cassaforte, Internet Wi-Fi. La particolare forma dell’immobile, a ferro di cavallo, garantisce un’ampia vista sul mare o sul verde del parco. Il complesso dispone di camere doppie, triple e quadruple, queste ultime con letto a castello, e Family, per famiglie o gruppi di amici.<hr> Gli edifici nel parco composti da due strutture attigue al corpo centrale, inserite nel verde dei giardini mediterranei, con confortevoli camere vista parco o piscina. Camere doppie, triple e quadruple, con letto a castello.Un ristorante di cucina regionale, servizi congressuali, centro benessere, palestra, sporting club con campi da tennis e da calcetto, due piscine, 4 bar, di cui uno sulla spiaggia ed uno nel giardino di una delle piscine, sala Tv, biberoneria, ludoteca, parco giochi, servizio di baby sitter, dog sitter, parco giochi cani, assistenza veterinaria su richiesta.Il Costa Tiziana Hotel Calabria è situato in uno dei tratti di mare più incantevoli della costa ionica, tra Crotone e l’Area Marina di Capo Rizzuto. E’ immerso in un’oasi di 85.000 mq, interamente di proprietà, con palme, alberi da frutto, ulivi, siepi, fiori ed ampi spazi verdi a disposizione dei clienti, nei quali la Lega Italiana Protezione Uccelli (Lipu) ha allestito un percorso naturalistico, dove incontrare e conoscere le specie degli uccelli e della flora locali. Un servizio attento e curato nei dettagli, e nel periodo estivo, un’animazione coinvolgente, grazie alle numerose attività sportive e di svago, regalano una vacanza tutta sport, divertimento e relax per giovani, coppie e famiglie, o un appagante soggiorno di lavoro. Il complesso turistico dista tre chilometri dal centro di Crotone, 10 Km dall’aeroporto, a 300 mt dalla spiaggia privata. Il Costa Tiziana è il posto ideale per una vacanza in un villaggio Calabria davvero unico.</p>
+<a name ="contatti"><h3>Contatti</h3></a>
+<p>Viale Magna Grecia 40, Crotone, Italia</p>
+<p>tel. 0962xxxxxx</p>
+<p>info@costatiziana.it</p>
+<a href="#">Torna su</a>
+<footer>Copyright Marco Greco</footer>
+<script>
+function playAudio(){
+let x=document.getElementById('myAudio');
+x.load();
+x.autoplay=true;
+}
+body.addEventListener('click', playAudio);
+</script>
+</body>
+</html>
