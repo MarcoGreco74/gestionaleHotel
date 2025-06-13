@@ -3,7 +3,7 @@
 ?>
 <div class="d-flex flex-column flex-shrink-0 p-2 text-white bg-dark col-2" style='height:800px;'>
       <svg class="bi me-2" ><use xlink:href="#bootstrap"/></svg>
-      <span class="fs-4"><img src='../img/HotelCube.png' class='HClogo'></span>
+      <span class="fs-4"><img src='' class='HClogo'></span>
     </a>
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
